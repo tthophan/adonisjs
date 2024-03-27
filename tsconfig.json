@@ -22,7 +22,7 @@
       "#config/*": ["./src/configurations/*.js"],
       "#types/*": ["./src/types/*.js"],
       "#constants/*": ["./src/constants/*.js"],
-      "#bases/*":["./src/bases/*.js"]
-    },
+      "#bases/*": ["./src/bases/*.js"]
+    }
   }
 }

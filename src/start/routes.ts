@@ -15,7 +15,9 @@ router.get('/health', async () => {
     hello: 'world',
   }
 })
-router.group(() => {
-  router.resource('users', UserController)
-  router.post('users/:id', [UserController, 'stores'])
-}).prefix('api')
+router
+  .group(() => {
+    router.resource('users', UserController)
+    router.post('users/:id', [UserController, 'stores'])
+  })
+  .prefix('api')

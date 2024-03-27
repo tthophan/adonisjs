@@ -19,9 +19,8 @@ import 'reflect-metadata'
  */
 const APP_ROOT = new URL('../', import.meta.url)
 
-
 const terminate = (app: ApplicationService) => {
-  console.log('Application destroy')
+  console.log('Application Terminating')
   app.terminate()
 }
 /**

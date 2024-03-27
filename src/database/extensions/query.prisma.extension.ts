@@ -8,15 +8,15 @@ import {
 
 const createdByField = 'createdBy'
 const updatedByField = 'updatedBy'
-const defaultUserId = -1;
+const defaultUserId = -1
 
 const getCurrentUserId = (): number => {
   return storage.getStore()?.request.scopeVariable?.session?.userId ?? defaultUserId
 }
 
 const hasField = (model: string, fieldName: string): boolean => {
-  const modelInfo = Prisma.dmmf.datamodel.models.find(m => m.name === model)
-  const fields = modelInfo?.fields.map(field => field.name)
+  const modelInfo = Prisma.dmmf.datamodel.models.find((m) => m.name === model)
+  const fields = modelInfo?.fields.map((field) => field.name)
   return fields?.includes(fieldName) ?? false
 }
 

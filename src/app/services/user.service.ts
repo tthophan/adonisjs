@@ -4,7 +4,7 @@ import { Prisma } from '@prisma/client'
 
 @inject()
 export class UserService {
-  constructor(private readonly prismaService: PrismaService) { }
+  constructor(private readonly prismaService: PrismaService) {}
   async users() {
     return await this.prismaService.user.findMany({
       orderBy: {
@@ -13,7 +13,7 @@ export class UserService {
     })
   }
 
-  async createUser(data: { email: string, name: string }) {
+  async createUser(data: { email: string; name: string }) {
     return await this.prismaService.user.create({
       data: {
         ...data,

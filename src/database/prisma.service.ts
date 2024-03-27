@@ -11,12 +11,9 @@ export class PrismaService extends PrismaClient {
     await this.$disconnect()
   }
 
-  async beginTransaction() {
-  }
+  async beginTransaction() {}
 
-  async commitTransaction() {
-  }
+  async commitTransaction() {}
 
-  async rollbackTransaction() {
-  }
+  async rollbackTransaction() {}
 }

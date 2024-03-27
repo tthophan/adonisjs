@@ -1,48 +1,53 @@
-import { RequestValidator } from '@adonisjs/core/http';
+import { RequestValidator } from '@adonisjs/core/http'
 
 export type Optional<T> = T | null | undefined
-type dynamicType<T extends any = any> = number | string | Array<T> | Record<string | number, T> | Optional<T>
+type dynamicType<T extends any = any> =
+  | number
+  | string
+  | Array<T>
+  | Record<string | number, T>
+  | Optional<T>
 
 export interface Session {
-    userId?: Optional<number>
+  userId?: Optional<number>
 
-    email: string
+  email: string
 
-    phone: string
+  phone: string
 
-    avatar: string
+  avatar: string
 
-    address: string
+  address: string
 
-    registrationDate: Date
+  registrationDate: Date
 
-    fullName: string
+  fullName: string
 }
 
 export interface ScopeVariable {
-    accessToken?: Optional<string>
+  accessToken?: Optional<string>
 
-    refreshToken?: Optional<string>
+  refreshToken?: Optional<string>
 
-    appName?: Optional<string>
+  appName?: Optional<string>
 
-    appBuildNumber?: Optional<string>
+  appBuildNumber?: Optional<string>
 
-    requestId?: Optional<string>
+  requestId?: Optional<string>
 
-    hash?: Optional<string>
+  hash?: Optional<string>
 
-    deviceId?: Optional<string>
+  deviceId?: Optional<string>
 
-    session?: Optional<Session>
+  session?: Optional<Session>
 
-    requestIp?: Optional<string>
+  requestIp?: Optional<string>
 
-    [key: string]: dynamicType
+  [key: string]: dynamicType
 }
 
 declare module '@adonisjs/core/http' {
-    interface Request extends RequestValidator {
-        scopeVariable: ScopeVariable
-    }
+  interface Request extends RequestValidator {
+    scopeVariable: ScopeVariable
+  }
 }

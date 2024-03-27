@@ -30,7 +30,9 @@ export default defineConfig({
     },
     () => import('@adonisjs/core/providers/vinejs_provider'),
     () => import('@adonisjs/cors/cors_provider'),
-    () => import('./src/providers/app.provider.js'),
+    () => import('#providers/prisma.provider'),
+    () => import('#providers/google-pub-sub.provider'),
+    () => import('#providers/kafka.provider'),
   ],
 
   /*

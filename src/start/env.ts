@@ -17,4 +17,12 @@ export default await Env.create(new URL('../../', import.meta.url), {
   HOST: Env.schema.string({ format: 'host' }),
   LOG_LEVEL: Env.schema.string(),
   DATABASE_URL: Env.schema.string(),
+  // Google Pub/Sub Configuration
+  GOOGLE_TOPIC_NAME: Env.schema.string(),
+  GOOGLE_SUBSCRIPTION_NAME: Env.schema.string(),
+  GOOGLE_PROJECT_ID: Env.schema.string(),
+  GOOGLE_APPLICATION_CREDENTIAL: Env.schema.string(),
+  // Kafka configuration
+  KAFKA_BROKER: Env.schema.string(),
+  KAFKA_TOPIC: Env.schema.string(),
 })
